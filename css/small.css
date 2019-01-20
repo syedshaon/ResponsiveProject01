@@ -1,0 +1,17 @@
+﻿
+
+
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* 
+
+<!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  -->
+     */
+
+
