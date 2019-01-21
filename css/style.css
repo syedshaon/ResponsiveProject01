@@ -5,10 +5,9 @@
 /*----------------------FONT-----------------------------*/
 /*----------------------COLOR-----------------------------*/
 /*----------------------MARGIN & PADDING-----------------------------*/
-* {
-  color: #ffffff;
-}
-
+/** {
+    color: $font-color; // Changed default font color
+}*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -187,17 +186,17 @@ main {
 #highLight {
   width: 100%;
   height: auto;
-  position: relative;
-  top: 175px;
+  /*position:relative;*/
+  margin-top: 175px;
   overflow: hidden;
 }
-#highLight #img1txt {
+#highLight .img1txt {
   position: absolute;
-  /*display:block;*/
-  padding: 20px;
-  font-size: 2rem;
+  display: none;
+  padding: 5px;
+  font-size: 1.5rem;
   background-color: rgba(0, 0, 0, 0.58);
-  top: 80%;
+  bottom: 5%;
   right: 5%;
   z-index: 12;
 }
@@ -209,6 +208,30 @@ main {
 }
 #highLight img:nth-child(2) {
   display: inline;
+}
+
+/*-----------------------------------services-------------------------------*/
+#services {
+  height: 1000px;
+  /*overflow:hidden;*/
+  margin-top: 10px;
+  color: #424e64;
+  font-weight: 700;
+}
+#services h2 {
+  color: red;
+  margin-bottom: -5px;
+  font-size: 2rem;
+}
+
+#gradientHR {
+  margin-top: 0px;
+  /*position:absolute;*/
+  height: 10px;
+  width: 100%;
+  /*background-color:red;*/
+  background: -webkit-gradient(linear, left top, right top, from(#424e64), color-stop(50%, rgba(41, 137, 216, 0.5)), color-stop(51%, rgba(32, 124, 202, 0.49)), to(rgba(125, 185, 232, 0)));
+  background: linear-gradient(to right, #424e64 0%, rgba(41, 137, 216, 0.5) 50%, rgba(32, 124, 202, 0.49) 51%, rgba(125, 185, 232, 0) 100%);
 }
 
 /*-----------------------------------footer-------------------------------*/
@@ -275,6 +298,11 @@ footer a {
   #highLight {
     top: 141px;
   }
+
+  .img1txt h1 {
+    padding: 20px;
+    font-size: 2rem;
+  }
 }
 @media only screen and (max-width: 350px) {
   /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
@@ -325,7 +353,12 @@ footer a {
   }
 
   #highLight {
-    top: 215px;
+    margin-top: 215px;
+  }
+
+  .img1txt h1 {
+    padding: 3px;
+    font-size: 1rem;
   }
 }
 /*#content{

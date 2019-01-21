@@ -13,9 +13,9 @@
 
 /*-----------------------------------body-------------------------------*/
 body {
-    width:100%;
+    width: 100%;
     max-width: 1360px;
-    margin:0 auto;
+    margin: 0 auto;
     font-family: $defaultFont;
     font-weight: $normalWeight;
 }
@@ -27,9 +27,9 @@ body {
     top: 0;
     /*left: 0;*/
     width: 100%;
-    max-width:1360px;
+    max-width: 1360px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center; //for big device change need it
     color: $font-color;
     /*flex-wrap: wrap;*/
@@ -40,13 +40,13 @@ body {
 /*-----------------------------------header-------------------------------*/
 
 header {
-    height:80%;
+    height: 80%;
     background-color: $primaryColor;
     text-align: center; //funny isn't it! to center the logo or other stuff, that is inside this header (div).
-    /*flex: 1 1 100%;*/  
+    /*flex: 1 1 100%;*/
     padding-top: 15px;
     padding-bottom: 18px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     /*margin:auto auto auto 20px;   //for big device WE NEED it*/
     // margin-right:auto; //To float the item to right
     h1 {
@@ -62,7 +62,8 @@ header {
 }
 /*-----------------------------------nav ul li-------------------------------*/
 nav {
-    height:20%;  
+    height: 20%;
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -70,7 +71,6 @@ nav {
         width: 100%;
         flex-wrap: wrap;
         /*flex-direction:row;*/
-
         :last-child {
             border-right: none;
         }
@@ -85,7 +85,7 @@ nav {
             /*font-size: 1.35rem;*/
             box-sizing: border-box;
             font-weight: $boldWeight;
-            border-right: 1px solid red; //PUT last child border none on ul element ###           
+            border-right: 1px solid red; //PUT last child border none on ul element ###
             /*:hover{
                     border-top: 1px solid white; //Causing Li elements SHAKE, so turning off for now
                 }*/
@@ -120,23 +120,24 @@ main {
     top:150px;*/
 }
 
-#highLight {  
-    
-    width: 100%;  
-    height:auto;
-    position:relative; 
-    top: 175px;
-    overflow:hidden;
-    #img1txt{
-        position:absolute;
-        /*display:block;*/
-        padding:20px;
-        font-size:2rem;
-        background-color:rgba(0, 0, 0, 0.58);
-        top:80%;
-        right:5%;
-        z-index:12;
+#highLight {
+    width: 100%;
+    height: auto;
+    /*position:relative;*/
+    margin-top: 175px;
+    overflow: hidden;
+
+    .img1txt {
+        position: absolute;
+        display: none;
+        padding: 5px;
+        font-size: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.58);
+        bottom: 5%;
+        right: 5%;
+        z-index: 12;
     }
+
     img {
         display: none;
         width: 100%;
@@ -149,11 +150,43 @@ main {
     }
 }
 
+
+/*-----------------------------------services-------------------------------*/
+#services {
+    height:1000px;
+    /*overflow:hidden;*/
+    margin-top: 10px;
+    color: $primaryColor;
+    font-weight: $boldWeight;
+
+    h2 {
+        color: red;
+        margin-bottom: -5px;
+        font-size: 2rem;
+    }
+}
+
+
+#gradientHR {
+    margin-top: 0px;
+    /*position:absolute;*/
+    height: 10px;
+    width: 100%;
+    /*background-color:red;*/
+    background: linear-gradient(to right, rgba(66,78,100,1) 0%,rgba(41,137,216,0.5) 50%,rgba(32,124,202,0.49) 51%,rgba(125,185,232,0) 100%);
+}
+
+
+
+
+
+
+
 /*-----------------------------------footer-------------------------------*/
 footer {
-    position:relative;
+    position: relative;
     /*top:230px;*/
-    margin-top:80px;  //This is not working
+    margin-top: 80px; //This is not working
     width: 100%;
     background-color: $primaryColor;
     color: $secondaryColor;
