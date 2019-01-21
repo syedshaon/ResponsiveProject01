@@ -11,7 +11,8 @@
 }
 
 html {
-    background-color: #bdbf3a;
+    /*background-color: #bdbf3a;*/
+    background-color: #ffffff;
 }
 
 /*-----------------------------------body-------------------------------*/
@@ -21,6 +22,7 @@ body {
     margin: 0 auto;
     font-family: $defaultFont;
     font-weight: $normalWeight;
+    background-color: #bdbf3a;
 }
 
 /*-----------------------------------header-------------------------------*/
