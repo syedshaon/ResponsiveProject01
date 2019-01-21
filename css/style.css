@@ -2,6 +2,13 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+/*----------------------FONT-----------------------------*/
+/*----------------------COLOR-----------------------------*/
+/*----------------------MARGIN & PADDING-----------------------------*/
+* {
+  color: #ffffff;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -64,21 +71,164 @@ html {
   box-sizing: border-box;
 }
 
-header {
-  background-color: #424e64;
-  color: #bbc2ca;
-  padding: 1rem 2%;
-}
-header h1 {
-  font-size: 2rem;
-}
-header h2 {
-  font-size: 1.5rem;
+/*----------------------FONT-----------------------------*/
+/*----------------------COLOR-----------------------------*/
+/*----------------------MARGIN & PADDING-----------------------------*/
+/*-----------------------------------body-------------------------------*/
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
 }
 
+/*-----------------------------------header-------------------------------*/
+#navBar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
+  /*flex: 1 1 100%; //for big device dont need it*/
+  /*padding:20px ;*/
+}
+
+/*-----------------------------------header-------------------------------*/
+header {
+  background-color: #424e64;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  /*margin-left:*/
+  padding-top: 15px;
+  padding-bottom: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*margin:auto auto 15px auto;*/
+  /*padding: 1rem 2%;*/
+  /*margin:auto auto auto 20px;   //for big device WE NEED it*/
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+header h2 {
+  font-size: 1.35rem;
+  font-weight: 300;
+}
+
+/*-----------------------------------nav ul li-------------------------------*/
+nav {
+  /*box-sizing:border-box;*/
+  /*padding-top: 15px;*/
+  /*background-color: $secondaryColor;*/
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  /*margin-bottom:15px;*/
+  /*margin-left:20px;*/
+  /*border-top:1px solid white;*/
+  /*ul li:last-child{
+      border-right:1px solid white;
+  }*/
+}
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+nav ul :last-child {
+  border-right: none;
+}
+@media all and (max-width: 350px) {
+  nav ul :nth-child(2n) {
+    border-right: none;
+  }
+}
+nav ul li {
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+  /*display: inline;*/
+  /*font-size: 1.35rem;*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 700;
+  border-right: 1px solid white;
+  /*width:auto;*/
+  /*:hover{
+          border-top: 1px solid white; //Causing Li elements SHAKE, so turning off for now
+      }*/
+}
+@media all and (max-width: 350px) {
+  nav ul li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+    /*margin: auto;*/
+    padding: 2px;
+    /*box-sizing:border-box;
+    background-color:$primaryColor;*/
+  }
+}
+nav ul li a {
+  color: #424e64;
+  background-color: #bbc2ca;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: background .75s ease, color .75s ease;
+  transition: background .75s ease, color .75s ease;
+}
+nav ul li a.active {
+  color: #ffffff;
+  background-color: rgba(66, 78, 100, 0.61);
+}
+nav ul li a:hover {
+  color: #bbc2ca;
+  background-color: #424e64;
+}
+
+/*-----------------------------------footer-------------------------------*/
 footer {
+  width: 100%;
   background-color: #424e64;
   color: #bbc2ca;
-  height: 60px;
+  height: auto;
+  /*min-height: 60px;*/
   width: 100%;
+  text-align: center;
+  /*position:absolute;*/
+}
+footer p {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*height:16px;*/
+  /*position:relative;*/
+  /*top:50%;      // all this 5 line of code just to make the p content vertically and horizontally center;*/
+  /*margin:0 auto;*/
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+footer a {
+  text-decoration: none;
 }
