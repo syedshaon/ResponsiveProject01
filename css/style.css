@@ -65,6 +65,9 @@ table {
 /*----------------------MARGIN & PADDING-----------------------------*/
 /*-----------------------------------body-------------------------------*/
 body {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
@@ -74,8 +77,9 @@ body {
   z-index: 10;
   position: fixed;
   top: 0;
-  left: 0;
+  /*left: 0;*/
   width: 100%;
+  max-width: 1360px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,29 +179,33 @@ nav ul li a:hover {
 /*-----------------------------------highLight-------------------------------*/
 main {
   width: 100%;
-  height: 1000px;
+  height: 500px;
   /*position:absolute;
   top:150px;*/
 }
 
 #highLight {
   width: 100%;
-  position: absolute;
-  top: 170px;
+  height: auto;
+  position: relative;
+  top: 175px;
+  overflow: hidden;
 }
-#highLight h1 {
+#highLight #img1txt {
   position: absolute;
-  display: block;
+  /*display:block;*/
   padding: 20px;
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.58);
-  bottom: 10%;
+  top: 80%;
   right: 5%;
+  z-index: 12;
 }
 #highLight img {
   display: none;
   width: 100%;
   height: auto;
+  /*max-height:300px;*/
 }
 #highLight img:nth-child(2) {
   display: inline;
@@ -205,6 +213,9 @@ main {
 
 /*-----------------------------------footer-------------------------------*/
 footer {
+  position: relative;
+  /*top:230px;*/
+  margin-top: 80px;
   width: 100%;
   background-color: #424e64;
   color: #bbc2ca;
@@ -260,6 +271,10 @@ footer a {
     border-right: none;
     border-left: 1px solid red;
   }
+
+  #highLight {
+    top: 141px;
+  }
 }
 @media only screen and (max-width: 350px) {
   /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
@@ -313,3 +328,10 @@ footer a {
     top: 215px;
   }
 }
+/*#content{
+    margin:0 auto;
+   
+    width:100%;
+     max-width:1360px;
+    background-color:black;
+}*/
