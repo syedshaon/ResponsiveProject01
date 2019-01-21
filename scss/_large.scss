@@ -1,29 +1,51 @@
 ﻿
 @import "variables";
+
+
+@media all and (min-width: 901px) {
+
+
 #navBar {
-    flex-direction:row;
-    height:140px;
+    flex-direction: row;
+    height: 140px;
     background-color: $primaryColor;
 }
-header{
-    flex:8 1 100%;
-    text-align:left;
-    padding-left:20px;
+
+header {
+    flex: 8 1 100%;
+    text-align: left;
+    padding-left: 20px;
 }
-nav{
-    padding-top:50px;
-    flex:1 1 100%;
-    ul li{
-        border-right:none;
-        border-left:1px solid red;
+
+nav {
+    padding-top: 50px;
+    flex: 1 1 100%;
+
+    ul li {
+        border-right: none;
+        border-left: 1px solid red;
     }
 }
-#highLight{
-    top:141px;
 
-}
-.img1txt h1{
-    padding:20px;
-  font-size:2rem;
+#highLight {
+    margin-top: 141px;
 }
 
+.img1txt h1 {
+    padding: 20px;
+    font-size: 2rem;
+}
+
+
+
+
+
+    #serviceInfo div {
+        margin-right: 5px;
+        flex: 1 1 18%;
+    }
+
+    #serviceInfo div:nth-of-type(5n) {
+        margin-right: 0px;
+    }
+}
