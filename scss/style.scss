@@ -2,16 +2,15 @@
 
 @import "reset";
 
-@import "small";
+/*CSS for very small device is imported at bottom*/
+
 @import "variables";
 
 @media only screen and (min-width: 560px) {
     @import "medium";
 }
 
-@media only screen and (min-width: 1140px) {
-    @import "large";
-}
+
 /*-----------------------------------body-------------------------------*/
 body {
     font-family: $defaultFont;
@@ -20,28 +19,30 @@ body {
 
 /*-----------------------------------header-------------------------------*/
 #navBar {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     display: flex;
+    flex-direction:column;
     justify-content: center; //for big device change need it
-    
     color: $font-color;
-    flex-wrap: wrap;
-    height: auto;
+    /*flex-wrap: wrap;*/
+    height: 170px;
     /*flex: 1 1 100%; //for big device dont need it*/
     /*padding:20px ;*/
 }
 /*-----------------------------------header-------------------------------*/
 
 header {
+    height:80%;
     background-color: $primaryColor;
     text-align: center; //funny isn't it! to center the logo or other stuff, that is inside this header (div).
-    flex: 1 1 100%;
-    /*margin-left:*/
+    /*flex: 1 1 100%;*/  
     padding-top: 15px;
-    padding-bottom: 15px;
-    box-sizing:border-box;
-    /*margin:auto auto 15px auto;*/
-    /*padding: 1rem 2%;*/
+    padding-bottom: 18px;
+    box-sizing: border-box; 
     /*margin:auto auto auto 20px;   //for big device WE NEED it*/
     // margin-right:auto; //To float the item to right
     h1 {
@@ -57,31 +58,19 @@ header {
 }
 /*-----------------------------------nav ul li-------------------------------*/
 nav {
-    /*box-sizing:border-box;*/
-    /*padding-top: 15px;*/
-    /*background-color: $secondaryColor;*/
-    flex: 1 1 100%;
-    /*margin-bottom:15px;*/
-    /*margin-left:20px;*/
-    /*border-top:1px solid white;*/
-    /*ul li:last-child{
-        border-right:1px solid white;
-    }*/
+    height:20%;  
     ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         flex-wrap: wrap;
+        /*flex-direction:row;*/
 
         :last-child {
             border-right: none;
         }
-        @media all and (max-width: 350px) {
-            :nth-child(2n){
-                    border-right:none;
-                }
-        }
+
 
         li {
             text-align: center; //funny isn't it! to center the logo or other stuff, that is inside this header (div).  ###
@@ -90,67 +79,117 @@ nav {
             //margin: 40px 20px;   //for big device WE NEED it*/
             //padding:20px;
             /*font-size: 1.35rem;*/
-            box-sizing:border-box;
+            box-sizing: border-box;
             font-weight: $boldWeight;
-            border-right: 1px solid white;  //PUT last child border none on ul element ###
-            /*width:auto;*/
+            border-right: 1px solid red; //PUT last child border none on ul element ###           
             /*:hover{
                     border-top: 1px solid white; //Causing Li elements SHAKE, so turning off for now
-                }*/ 
-            @media all and (max-width: 350px) { //This part is for devices with width LESS THAN 300px
-                flex: 1 1 50%;
-                /*margin: auto;*/
-                padding: 2px;
-                /*box-sizing:border-box;
-                background-color:$primaryColor;*/
-                
-            }
-
+                }*/
             a {
                 color: $primaryColor;
                 background-color: $secondaryColor;
                 text-decoration: none;
                 display: block;
                 padding: 10px 0;
-                box-sizing:border-box;  
-                transition: background .75s ease, color .75s ease;    
-                         
+                box-sizing: border-box;
+                transition: background .75s ease, color .75s ease;
             }
-            a.active{
-                    color: $font-color;
-                    background-color: rgba(66, 78, 100, 0.61);
-                } 
-            a:hover{
-                    color: $secondaryColor;
-                    background-color: $primaryColor;
-                }   
+
+            a.active {
+                color: $font-color;
+                background-color: rgba(171, 177, 189, 0.60);
+            }
+
+            a:hover {
+                color: $secondaryColor;
+                background-color: $primaryColor;
+            }
         }
     }
 }
 
+/*-----------------------------------highLight-------------------------------*/
+main {
+    width: 100%;
+    height: 1000px;
+    /*position:absolute;
+    top:150px;*/
+}
+
+#highLight {  
+    width: 100%;  
+    position:absolute; 
+    top: 170px;
+    h1{
+        position:absolute;
+        display:block;
+        padding:20px;
+        font-size:2rem;
+        background-color:rgba(0, 0, 0, 0.58);
+        bottom:10%;
+        right:5%;
+    }
+    img {
+        display: none;
+        width: 100%;
+        height: auto;
+    }
+
+    img:nth-child(2) {
+        display: inline;
+    }
+}
 
 /*-----------------------------------footer-------------------------------*/
 footer {
-    width:100%;
+    width: 100%;
     background-color: $primaryColor;
     color: $secondaryColor;
-    height:auto;
+    height: auto;
     /*min-height: 60px;*/
-
     width: 100%;
-    text-align:center;
+    text-align: center;
     /*position:absolute;*/
-    p{
-        display:block;
-        box-sizing:border-box;
+    p {
+        display: block;
+        box-sizing: border-box;
         /*height:16px;*/
         /*position:relative;*/
         /*top:50%;      // all this 5 line of code just to make the p content vertically and horizontally center;*/
         /*margin:0 auto;*/
-        padding-top:22px;
-        padding-bottom:22px;
+        padding-top: 22px;
+        padding-bottom: 22px;
     }
-    a{
-        text-decoration:none;        
+
+    a {
+        text-decoration: none;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 900px) {
+    @import "large";
+}
+
+
+
+@media only screen and (max-width: 350px) {
+    @import "small";
 }

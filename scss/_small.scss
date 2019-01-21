@@ -1,12 +1,60 @@
 ﻿
-
-
-
 /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
-html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
 
 /*  apply a natural box layout model to all elements  */
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 
 
+
+#navBar{
+    
+    overflow:hidden;
+    clear:both;
+    height:215px;
+   
+}
+header{
+    height:60%;
+    /*flex: 2 1 100%;*/
+}
+header h2{font-size:1rem;}
+    header h1{font-size:1.75rem;}
+
+nav{
+    height:35%;
+    /*flex: 2 1 100%;*/
+}
+
+nav ul li {
+    flex: 1 1 50%;  
+    padding: 2px;
+    
+}
+
+
+nav ul li:nth-child(2n) {
+    border-right: none;
+}
+
+
+main{
+
+}
+#highLight {      
+    top: 215px;   
+}
+
+
+
+@media only screen and (max-width: 280px) {
+    
+}

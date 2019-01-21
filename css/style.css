@@ -59,18 +59,7 @@ table {
   border-spacing: 0;
 }
 
-/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/*  apply a natural box layout model to all elements  */
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
+/*CSS for very small device is imported at bottom*/
 /*----------------------FONT-----------------------------*/
 /*----------------------COLOR-----------------------------*/
 /*----------------------MARGIN & PADDING-----------------------------*/
@@ -82,35 +71,38 @@ body {
 
 /*-----------------------------------header-------------------------------*/
 #navBar {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   color: #ffffff;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  height: auto;
+  /*flex-wrap: wrap;*/
+  height: 170px;
   /*flex: 1 1 100%; //for big device dont need it*/
   /*padding:20px ;*/
 }
 
 /*-----------------------------------header-------------------------------*/
 header {
+  height: 80%;
   background-color: #424e64;
   text-align: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-  /*margin-left:*/
+  /*flex: 1 1 100%;*/
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 18px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  /*margin:auto auto 15px auto;*/
-  /*padding: 1rem 2%;*/
   /*margin:auto auto auto 20px;   //for big device WE NEED it*/
 }
 header h1 {
@@ -125,18 +117,7 @@ header h2 {
 
 /*-----------------------------------nav ul li-------------------------------*/
 nav {
-  /*box-sizing:border-box;*/
-  /*padding-top: 15px;*/
-  /*background-color: $secondaryColor;*/
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-  /*margin-bottom:15px;*/
-  /*margin-left:20px;*/
-  /*border-top:1px solid white;*/
-  /*ul li:last-child{
-      border-right:1px solid white;
-  }*/
+  height: 20%;
 }
 nav ul {
   display: -webkit-box;
@@ -151,14 +132,10 @@ nav ul {
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  /*flex-direction:row;*/
 }
 nav ul :last-child {
   border-right: none;
-}
-@media all and (max-width: 350px) {
-  nav ul :nth-child(2n) {
-    border-right: none;
-  }
 }
 nav ul li {
   text-align: center;
@@ -170,22 +147,10 @@ nav ul li {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-weight: 700;
-  border-right: 1px solid white;
-  /*width:auto;*/
+  border-right: 1px solid red;
   /*:hover{
           border-top: 1px solid white; //Causing Li elements SHAKE, so turning off for now
       }*/
-}
-@media all and (max-width: 350px) {
-  nav ul li {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 50%;
-            flex: 1 1 50%;
-    /*margin: auto;*/
-    padding: 2px;
-    /*box-sizing:border-box;
-    background-color:$primaryColor;*/
-  }
 }
 nav ul li a {
   color: #424e64;
@@ -200,11 +165,42 @@ nav ul li a {
 }
 nav ul li a.active {
   color: #ffffff;
-  background-color: rgba(66, 78, 100, 0.61);
+  background-color: rgba(171, 177, 189, 0.6);
 }
 nav ul li a:hover {
   color: #bbc2ca;
   background-color: #424e64;
+}
+
+/*-----------------------------------highLight-------------------------------*/
+main {
+  width: 100%;
+  height: 1000px;
+  /*position:absolute;
+  top:150px;*/
+}
+
+#highLight {
+  width: 100%;
+  position: absolute;
+  top: 170px;
+}
+#highLight h1 {
+  position: absolute;
+  display: block;
+  padding: 20px;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.58);
+  bottom: 10%;
+  right: 5%;
+}
+#highLight img {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+#highLight img:nth-child(2) {
+  display: inline;
 }
 
 /*-----------------------------------footer-------------------------------*/
@@ -231,4 +227,89 @@ footer p {
 }
 footer a {
   text-decoration: none;
+}
+
+@media only screen and (min-width: 900px) {
+  /*----------------------FONT-----------------------------*/
+  /*----------------------COLOR-----------------------------*/
+  /*----------------------MARGIN & PADDING-----------------------------*/
+  #navBar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 140px;
+    background-color: #424e64;
+  }
+
+  header {
+    -webkit-box-flex: 8;
+        -ms-flex: 8 1 100%;
+            flex: 8 1 100%;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  nav {
+    padding-top: 50px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  nav ul li {
+    border-right: none;
+    border-left: 1px solid red;
+  }
+}
+@media only screen and (max-width: 350px) {
+  /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /*  apply a natural box layout model to all elements  */
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  #navBar {
+    overflow: hidden;
+    clear: both;
+    height: 215px;
+  }
+
+  header {
+    height: 60%;
+    /*flex: 2 1 100%;*/
+  }
+
+  header h2 {
+    font-size: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  nav {
+    height: 35%;
+    /*flex: 2 1 100%;*/
+  }
+
+  nav ul li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+    padding: 2px;
+  }
+
+  nav ul li:nth-child(2n) {
+    border-right: none;
+  }
+
+  #highLight {
+    top: 215px;
+  }
 }

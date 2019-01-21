@@ -1,2 +1,21 @@
-﻿body {
+﻿
+@import "variables";
+#navBar {
+    flex-direction:row;
+    height:140px;
+    background-color: $primaryColor;
 }
+header{
+    flex:8 1 100%;
+    text-align:left;
+    padding-left:20px;
+}
+nav{
+    padding-top:50px;
+    flex:1 1 100%;
+    ul li{
+        border-right:none;
+        border-left:1px solid red;
+    }
+}
+
