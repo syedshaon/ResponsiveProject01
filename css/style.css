@@ -18,7 +18,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 18px;
   font: inherit;
   vertical-align: baseline;
 }
@@ -64,17 +64,19 @@ html {
   box-sizing: border-box;
 }
 
-@media only screen and (min-width: 560px) {
-  h1 {
-    color: blue;
-  }
-}
-body header {
+header {
   background-color: #424e64;
   color: #bbc2ca;
   padding: 1rem 2%;
 }
-body footer {
+header h1 {
+  font-size: 2rem;
+}
+header h2 {
+  font-size: 1.5rem;
+}
+
+footer {
   background-color: #424e64;
   color: #bbc2ca;
   height: 60px;

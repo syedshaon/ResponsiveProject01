@@ -14,12 +14,20 @@
 @import "large";
 }
 
-body {
+
     header{
         background-color:$primaryColor;
         color: $secondaryColor;
         padding: 1rem 2%;
+
+        h1{
+            font-size: 2rem;
+        }
+        h2{
+            font-size: 1.5rem;
+        }
     }
+    
 
     footer{
         background-color: $primaryColor;
@@ -27,4 +35,4 @@ body {
         height:60px;
         width:100%;
     }
-}
+
